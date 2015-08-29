@@ -57,8 +57,15 @@ then
   exit
 fi
 
-# Setup python and django
+add-apt-repository ppa:webupd8team/sublime-text-2
 apt-get update
+
+# Setup tools
+apt-get install git
+apt-get install sublime-text
+apt-get install default-jdk  #needed for pycharm
+
+# Setup python and django
 apg-get install -y python
 apt-get install -y python-pip
 
@@ -68,6 +75,7 @@ virtualenv learn-django-env
 
 source learn-django-env/bin/activate
 pip install "Django==$DJANGO_VERSION"
+pip install django-bootstrap3
 deactivate
 
 # Setup postgres
