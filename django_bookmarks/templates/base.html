@@ -1,11 +1,20 @@
 {% load bootstrap3 %}
 <html>
 <head>
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
 </head>
 
 <body>
 {% block content %}
-<h1 class="text-info">">HELLO DJANGO!</h1>
+<h1>HELLO {{name}}!</h1>
+<div>{% bootstrap_icon "star" %}</div>
 {% endblock %}
 
 </body>
